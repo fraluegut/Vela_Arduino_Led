@@ -1,0 +1,17 @@
+/*
+ * Javier Luengo-Septiembre 2019.
+ * Código para simular con un led (amarillo) en el pin13 una vela. 
+ */
+ 
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(9600);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+int r = random(20, 255); //Valores aleatorios para simular cambios de intensidad. Se coloca en el loop 
+                         //para que cree un valor aleatorio en cada ciclo y tilile. 
+analogWrite(LED_BUILTIN, r);
+Serial.println(r); //Visor en el Serial de los valores aleatorios que se usan. 
+}
